@@ -42,6 +42,16 @@ class ProjectsController < ApplicationController
     @portfolio_project = Project.find(params[:id])
   end
 
+  def destroy
+    @portfolio_project = Project.find(params[:id])
+
+    @portfolio_project.destroy
+    respond_to do |format|
+      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
 
   private
     def project_params

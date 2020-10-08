@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  resources :projects
-  get 'pages/home'
-  get 'pages/about'
-  get 'pages/contact'
+  resources :projects, except: [:show]
+  get 'project/:id', to: 'projects#show', as: 'project_show'
+
+  get '/about', to: 'pages#about'
+  get '/contact', to: 'pages#contact'
+
   resources :blogs
+  root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

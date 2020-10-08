@@ -3,9 +3,9 @@
 <%= link_to "Add new Project", new_project_path %>
 
 <% @portfolio_projects.each do |portfolio_project| %>
-  <p><%= portfolio_project.title %></p>
+  <h3><%= link_to portfolio_project.title, project_path(portfolio_project) %></h3>
   <p><%= portfolio_project.subtitle %></p>
   <p><%= portfolio_project.body %></p>
   <%= image_tag portfolio_project.thumb_image unless portfolio_project.thumb_image.nil? %>
-  <%= link_to "Edit", edit_project_path(portfolio_project.id) %>
+  <%= link_to "Edit", edit_project_path(portfolio_project) %>
 <% end %>

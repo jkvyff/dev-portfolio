@@ -33,14 +33,14 @@ puts "4 skills created"
     title: "Project Number: #{projectNum}",
     subtitle: "Ruby on Rails",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident",
-    main_image: "https://placehold.it/700x400",
+    main_image: "https://placehold.it/600x400",
     thumb_image: "https://placehold.it/350x200"
   )
 end
 
 2.times do |projectNum|
   Project.create!(
-    title: "Project Number: #{projectNum}",
+    title: "Project Number: #{projectNum + 7}",
     subtitle: "Node js",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident",
     main_image: "https://placehold.it/700x400",

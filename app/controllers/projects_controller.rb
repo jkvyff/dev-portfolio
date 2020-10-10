@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_action :set_project, only: [:edit, :update, :show, :destroy]
   layout "projects"
   
   def index
@@ -25,11 +26,9 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    @portfolio_project = Project.find(params[:id])
   end
 
   def update
-    @portfolio_project = Project.find(params[:id])
     respond_to do |format|
       if @portfolio_project.update(project_params)
         format.html { redirect_to projects_path, notice: 'Project was successfully updated.' }
@@ -42,12 +41,9 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @portfolio_project = Project.find(params[:id])
   end
 
   def destroy
-    @portfolio_project = Project.find(params[:id])
-
     @portfolio_project.destroy
     respond_to do |format|
       format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
@@ -57,11 +53,15 @@ class ProjectsController < ApplicationController
 
 
   private
-    def project_params
-      params.require(:project).permit(:title, 
-                                      :subtitle, 
-                                      :body, 
-                                      technologies_attributes: [:name]
-                                     )
-    end
+  def set_project
+    @blog = Project.friendly.find(params[:id])
+  end
+
+  def project_params
+    params.require(:project).permit(:title, 
+                                    :subtitle, 
+                                    :body, 
+                                    technologies_attributes: [:name]
+                                    )
+  end
 end

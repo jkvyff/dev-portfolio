@@ -1,4 +1,4 @@
-module DeviseWhitelist
+module SetSource
   extend ActiveSupport::Concern
 
   included do

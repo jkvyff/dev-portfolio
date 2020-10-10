@@ -56,6 +56,10 @@ class ProjectsController < ApplicationController
 
   private
     def project_params
-      params.require(:project).permit(:title, :subtitle, :body, technologies_attributes: [:name])
+      params.require(:project).permit(:title, 
+                                      :subtitle, 
+                                      :body, 
+                                      technologies_attributes: [:name]
+                                     )
     end
 end

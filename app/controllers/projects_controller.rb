@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  layout "projects"
+  
   def index
     @portfolio_projects = Project.all
   end

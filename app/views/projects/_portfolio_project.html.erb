@@ -1,0 +1,6 @@
+<h3><%= link_to portfolio_project.title, project_show_path(portfolio_project) %></h3>
+<p><%= portfolio_project.subtitle %></p>
+<p><%= portfolio_project.body %></p>
+<%= image_tag portfolio_project.thumb_image unless portfolio_project.thumb_image.nil? %>
+<%= link_to "Edit", edit_project_path(portfolio_project) %>
+<%= link_to 'Delete Project', project_path(portfolio_project), method: :delete, data: { confirm: 'Are you sure?' } %>

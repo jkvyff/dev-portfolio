@@ -106,10 +106,19 @@ body {
 /*
  * Custom Styles
  */
+body {
+  text-align: center;
+}
+
 .card-body {
+  text-align: left;
   color: black;
 }
 
 .auth-links a {
   color: black;
+}
+
+.register-text {
+  text-align: center;
 }

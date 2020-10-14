@@ -115,10 +115,20 @@ body {
   color: black;
 }
 
+.center-text {
+  text-align: center;
+}
+
 .register-text {
   text-align: center;
 }
 
 .mastfoot {
   text-align: center;
+}
+
+.login > .card {
+  width: 22rem;
+  margin: 0 auto;
+  float: none;
 }

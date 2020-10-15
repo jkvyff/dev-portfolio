@@ -1,5 +1,7 @@
-<h1>Projects</h1>
-
-<%= link_to "Add new Project", new_project_path if logged_in?(:site_admin) %>
-
-<%= render partial: 'portfolio_project', collection: @portfolio_projects %>
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <%= render partial: 'portfolio_project', collection: @portfolio_projects %>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,24 @@
+<!-- Start of Blog Header-->
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+  <div class="col-md-6 px-0">
+    <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
+    <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+    <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+  </div>
+</div>
+<!-- End of Blog Header-->
+
+
 <div class="col-md-8 blog-main">
   <%= link_to 'Write a New Blog', new_blog_path if logged_in?(:site_admin) %>
   <h3 class="pb-4 mb-4 font-italic border-bottom">
     Latest Blogs
   </h3>
+
   <%= render @blogs %>
+
+  <nav class="blog-pagination">
+    <a class="btn btn-outline-primary" href="#">Older</a>
+    <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+  </nav>
 </div>

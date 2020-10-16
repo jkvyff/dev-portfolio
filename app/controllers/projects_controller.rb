@@ -57,7 +57,7 @@ class ProjectsController < ApplicationController
 
   private
   def set_project
-    @blog = Project.friendly.find(params[:id])
+    @portfolio_project = Project.find(params[:id])
   end
 
   def project_params

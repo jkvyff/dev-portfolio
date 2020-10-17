@@ -2,11 +2,11 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:edit, :update, :show, :destroy]
   layout "projects"
 
-  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
 
   
   def index
-    @portfolio_projects = Project.all
+    @portfolio_projects = Project.by_position
   end
 
   def new
@@ -54,9 +54,17 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def sort
+    params[:project].each_with_index do |id, index|
+      Project.where(id: id).update_all(position: index + 1)
+    end
+    head :ok
+  end
+
 
   private
   def set_project
+    byebug
     @portfolio_project = Project.find(params[:id])
   end
 

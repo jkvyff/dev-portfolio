@@ -3,7 +3,8 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-require("@rails/ujs").start();
+import Rails from "@rails/ujs";
+Rails.start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
@@ -17,3 +18,19 @@ require("channels");
 
 // Added for bootstrap
 import "bootstrap";
+
+require("jquery-ui/ui/widget");
+require("jquery-ui/ui/widgets/sortable");
+
+$(document).on("turbolinks:load", () => {
+  $("#sortable-projects").sortable({
+    handle: ".handle",
+    update: function (e, ui) {
+      Rails.ajax({
+        url: $(this).data("url"),
+        type: "PATCH",
+        data: $(this).sortable("serialize"),
+      });
+    },
+  });
+});

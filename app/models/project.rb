@@ -10,9 +10,15 @@ class Project < ApplicationRecord
     where(subtitle: 'Ruby on Rails')
   end
 
+  def self.by_position
+    order("position ASC")
+  end
+
   scope :ruby_on_rails_project_items, -> { where(subtitle: 'Ruby on Rails') }
 
   after_initialize :set_defaults
+
+  acts_as_list
 
   def set_defaults
     self.main_image ||= Placeholder.image_generator(height: '600', width: '400')

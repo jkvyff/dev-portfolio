@@ -54,9 +54,17 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def sort
+    params[:project].each_with_index do |id, index|
+      Project.where(id: id).update_all(position: index + 1)
+    end
+    head :ok
+  end
+
 
   private
   def set_project
+    byebug
     @portfolio_project = Project.find(params[:id])
   end
 

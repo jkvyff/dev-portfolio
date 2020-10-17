@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
 
   
   def index
-    @portfolio_projects = Project.all
+    @portfolio_projects = Project.by_position
   end
 
   def new

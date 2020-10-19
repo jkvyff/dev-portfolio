@@ -64,14 +64,15 @@ class ProjectsController < ApplicationController
 
   private
   def set_project
-    byebug
     @portfolio_project = Project.find(params[:id])
   end
 
   def project_params
     params.require(:project).permit(:title, 
                                     :subtitle, 
-                                    :body, 
+                                    :body,
+                                    :main_image,
+                                    :thumb_image,
                                     technologies_attributes: [:name]
                                     )
   end

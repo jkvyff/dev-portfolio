@@ -14,6 +14,12 @@
       <% @portfolio_project.technologies.each do |t| %>
         <p><%= t.name %></p>
       <% end %>
+
+      <% if logged_in?(:site_admin) %>
+        <div>
+          <%= link_to "Edit Item", edit_project_path(@portfolio_project), class: "btn btn-warning" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <%= form_with(model: @portfolio_project, local: true) do |f| %>
   <% if @portfolio_project.errors.any? %>
     <% @portfolio_project.errors.full_messages.each do |error| %>
-      <%= js add_gritter(flash[:error], title: "Project Error", sticky: false) %>
+      <%= alert_generator error %>
     <% end %>
   <% end %>
   <div class="row">

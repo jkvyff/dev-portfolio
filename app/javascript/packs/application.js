@@ -17,7 +17,10 @@ require("channels");
 // const imagePath = (name) => images(name, true)
 
 require("jquery")
+window.jQuery = $;
+window.$ = $;
 require("@nathanvda/cocoon")
+require("gritter/js/jquery.gritter.js")
 
 // Added for bootstrap
 import "bootstrap";

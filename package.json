@@ -10,6 +10,7 @@
     "@rails/webpacker": "5.2.1",
     "bootstrap": "^4.5.3",
     "expose-loader": "^1.0.1",
+    "gritter": "^1.7.4",
     "jquery": "^3.5.1",
     "jquery-ui": "^1.12.1",
     "jquery-ui-dist": "^1.12.1",

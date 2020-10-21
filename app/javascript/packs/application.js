@@ -25,8 +25,6 @@ require("gritter/js/jquery.gritter.js")
 // Added for bootstrap
 import "bootstrap";
 
-require("./stylesheets.scss")
-
 require("jquery-ui/ui/widget");
 require("jquery-ui/ui/widgets/sortable");
 

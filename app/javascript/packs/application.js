@@ -24,7 +24,7 @@ require("gritter/js/jquery.gritter.js")
 
 // Added for bootstrap
 import "bootstrap";
-import "cosmos";
+import "cosmos.js";
 
 require("jquery-ui/ui/widget");
 require("jquery-ui/ui/widgets/sortable");

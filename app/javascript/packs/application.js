@@ -24,9 +24,11 @@ require("gritter/js/jquery.gritter.js")
 
 // Added for bootstrap
 import "bootstrap";
+import "cosmos";
 
 require("jquery-ui/ui/widget");
 require("jquery-ui/ui/widgets/sortable");
+
 
 $(document).on("turbolinks:load", () => {
   $("#sortable-projects").sortable({

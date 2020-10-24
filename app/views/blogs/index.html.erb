@@ -1,4 +1,4 @@
-<%= render 'hero_blog'%>
+<%= render partial: 'hero_blog', object: @blogs %>
 
 <div class="col-md-8 blog-main">
   <%= link_to 'Write a New Blog', new_blog_path if logged_in?(:site_admin) %>

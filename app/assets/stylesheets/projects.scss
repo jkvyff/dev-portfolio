@@ -7,6 +7,7 @@
   margin-bottom: 0;
   background-color: #fff;
 }
+
 @media (min-width: 768px) {
   .jumbotron {
     padding-top: 6rem;
@@ -37,8 +38,35 @@ footer p {
 
 /* Custom Styles */
 
+body {
+  perspective: 1000px;
+}
+
+img {
+  transition: all 0.5s ease-out;
+}
+
 .projects-container {
   padding-top: 30px;
+}
+
+.card-container {
+  display: flex;
+}
+
+.project-card {
+  transform-style: preserve-3d;
+  transform: rotate(0deg);
+}
+
+.card-body {
+  transition: all 0.5s ease-out;
+}
+
+.card-text {
+  font-size: 1.2rem;
+  margin-bottom: 0.1rem;
+  transition: all 0.5s ease-out;
 }
 
 .gritter-item-wrapper {

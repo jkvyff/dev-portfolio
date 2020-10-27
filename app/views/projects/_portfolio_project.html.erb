@@ -1,7 +1,7 @@
 <div class="col-md-4" id="<%= dom_id(portfolio_project) %>">
   <div class="card-container">
     <div class="card project-card mb-4 shadow-sm handle">
-      <%= image_tag project_img(portfolio_project.thumb_image.url, 'thumb') %>
+      <%= image_tag project_img(portfolio_project.thumb_image.url, 'thumb'), width: '100%', height: '200px' %>
       <div class="card-body">
         <p class="card-text"><%= link_to portfolio_project.title, project_show_path(portfolio_project) %></p>
         <%= portfolio_project.subtitle %>

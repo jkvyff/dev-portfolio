@@ -11,8 +11,8 @@ $(document).on("turbolinks:load", () => {
       const B = containers[idx].getBoundingClientRect();
       const centerX = B.left + B.width / 2;
       const centerY = B.top + B.height / 2;
-      const xAxis = (centerX - e.pageX) / 25;
-      const yAxis = (centerY + window.scrollY - e.pageY) / 25;
+      const xAxis = (centerX - e.pageX) / 35;
+      const yAxis = (centerY + window.scrollY - e.pageY) / 35;
   
       cards[idx].style.transform = `rotateY(${-xAxis}deg) rotateX(${yAxis}deg)`;
     })
